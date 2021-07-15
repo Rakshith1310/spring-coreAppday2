@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	  http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean id="NewElectronicDevice" class="com.fis.spring.app.model.ElectronicDevices">
+		<constructor-arg value="123" name="power"></constructor-arg>
+		<constructor-arg value="124" name="memory"></constructor-arg>
+		<constructor-arg value="true" name="bluetooth"></constructor-arg>
+		<constructor-arg value="3" name="ratings"></constructor-arg>
+	</bean> -->
+	
+		
+	<bean id = "NewElectronicDevice2" class="com.fis.spring.app.model.ElectronicDevices" autowire="byName">
+		<property name="power" value="1020"></property>																	
+		<property name="memory" value="1030"></property>
+		<property name="bluetooth" value="true"></property>
+		<property name="ratings" value="3"></property>
+		<property name="keyboard">
+			<list>
+				<ref bean="keyboard1" />
+				<ref bean="keyboard2" />
+			</list>
+		</property>
+		
+	</bean>
+	
+	<bean id="hardDriveType" class="com.fis.spring.app.model.HardDriveType"  >
+		<property name="hardDriveType" value="ssd"></property>
+		<!-- <constructor-arg  value="ssd" name="hardDriveType"></constructor-arg> -->
+	</bean>
+	
+	<bean id="keyboard1" class="com.fis.spring.app.model.Keyboard" autowire="byName">
+		<property name="companyName" value="logitech"></property>
+		<property name="color" value="black"></property>
+	</bean>
+	
+	<bean id="keyboard2" class="com.fis.spring.app.model.Keyboard" autowire="byName">
+		<property name="companyName" value="iBall"></property>
+		<property name="color" value="blue"></property>
+	</bean>
+	
+</beans>
+		
+	
+<!-- <bean id="eee" class="com.fis.app.model.Engine">
+		<property name="engineName" value="TataEngine"></property>
+		<property name="power" value="1200"></property>
+	</bean>
+	
+	<bean id="mssss" class="com.fis.app.model.MusicSystem">
+		<property name = "name" value="Poineer"/>
+	</bean> -->
+	
+	
+	
